@@ -2,10 +2,14 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Button } from 'react-native';
 
 export default function App() {
+  
+  console.log("App Executed");
+
   return (
     <View style={styles.container}>
       <Text>Circuit Solver</Text>
-      <Button title='Test Server'/>
+      <Button onPress={() => alert("Hello Dr. Gruenbacher!")} 
+      title='Test Server'/>
       <StatusBar style="auto" />
     </View>
   );

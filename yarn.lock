@@ -4679,7 +4679,7 @@
     "normalize-css-color" "^1.0.2"
     "prop-types" "^15.6.0"
 
-"react-native@>=0.64.0-rc.0 || 0.0.0-*", "react-native@0.64.3":
+"react-native@^0.41.2", "react-native@>=0.64.0-rc.0 || 0.0.0-*", "react-native@0.64.3":
   "integrity" "sha512-2OEU74U0Ek1/WeBzPbg6XDsCfjF/9fhrNX/5TFgEiBKd5mNc9LOZ/OlMmkb7iues/ZZ/oc51SbEfLRQdcW0fVw=="
   "resolved" "https://registry.npmjs.org/react-native/-/react-native-0.64.3.tgz"
   "version" "0.64.3"
@@ -5364,6 +5364,11 @@
   dependencies:
     "os-tmpdir" "^1.0.0"
     "rimraf" "~2.2.6"
+
+"tflite-react-native@^0.0.5":
+  "integrity" "sha512-aBajq5yQQ8UiB92tIk+v9BIKZTFGwCTHegfefISgnXwqPiPAAvKhdX6Vb80kJFPTUjXB53w/NZQT9qCyVBYMyA=="
+  "resolved" "https://registry.npmjs.org/tflite-react-native/-/tflite-react-native-0.0.5.tgz"
+  "version" "0.0.5"
 
 "thenify-all@^1.0.0":
   "integrity" "sha1-GhkY1ALY/D+Y+/I02wvMjMEOlyY="
