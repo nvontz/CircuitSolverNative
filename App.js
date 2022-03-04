@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { StyleSheet, Text, View, Button, Image } from "react-native";
 import { SafeAreaView } from "react-native";
 import { Camera } from "expo-camera";
+import GalleryComponent from "./GalleryComponent";
 
 export default function App() {
   const [hasCameraPermission, setHasCameraPermission] = useState(null);
@@ -54,6 +55,7 @@ export default function App() {
         ></Button>
         <Button title="Take Picture" onPress={() => takePicture()} />
         {image && <Image source={{ uri: image }} style={{ flex: 1 }} />}
+        {/*<GalleryComponent/>*/}
       </View>
     </SafeAreaView>
   );

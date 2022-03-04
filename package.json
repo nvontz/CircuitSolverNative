@@ -10,18 +10,22 @@
     "eject": "expo eject"
   },
   "dependencies": {
+    "@expo/react-native-image-gallery": "^2.0.2",
     "@tensorflow/tfjs": "^3.13.0",
     "expo": "~44.0.0",
     "expo-camera": "~12.1.2",
     "expo-gl": "~11.1.1",
     "expo-gl-cpp": "~11.1.0",
+    "expo-image-picker": "^12.0.2",
     "expo-status-bar": "~1.2.0",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-native": "0.64.3",
     "react-native-fs": "^2.0.1-rc.2",
     "react-native-web": "0.17.1",
-    "tflite-react-native": "^0.0.5"
+    "tflite-react-native": "^0.0.5",
+    "react-native-screens": "~3.10.1",
+    "react-native-safe-area-context": "3.3.2"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9"
