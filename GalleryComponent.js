@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 
 import * as ImagePicker from 'expo-image-picker';
-import { Button, Image, View, Platform } from 'react-native';
+import { Button, Image, View, Platform, StyleSheet } from 'react-native';
 
 
 
-export default function GalleryComponent() {
+function GalleryComponent() {
     const [image, setImage] = useState(null);
 
     useEffect(() => {
@@ -20,28 +20,36 @@ export default function GalleryComponent() {
     }, []);
 
     const chooseImg = async () => {
-        try{
-        let result = await ImagePicker.launchImageLibraryAsync({
-            mediaTypes: ImagePicker.MediaTypeOptions.Images, 
-            quality: 1,
-            allowsEditing: false,
-        });
+        try {
+            let result = await ImagePicker.launchImageLibraryAsync({
+                mediaTypes: ImagePicker.MediaTypeOptions.Images,
+                quality: 1,
+                allowsEditing: false,
+            });
 
-        console.log(result);
+            console.log(result);
 
-        if (!result.cancelled) {
-            setImage(result.uri);
-        }}
-        catch(err)
-        {
+            if (!result.cancelled) {
+                setImage(result.uri);
+            }
+        }
+        catch (err) {
             console.log(err)
         }
     };
 
+    /*{image && <Image source={{ uri: image }} style={{ width: 354, height: 200 }} />} */
     return (
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', }}>
+        <View style={styles.bottom} >
             <Button title="Choose image from camera roll" onPress={chooseImg} />
-                {image && <Image source={{ uri: image }} style={{ width: 354, height: 200 }} />}
         </View>
     );
 }
+
+const styles = StyleSheet.create({
+    bottom: {
+        bottom: 0
+    }
+})
+
+export default GalleryComponent

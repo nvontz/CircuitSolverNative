@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "circuitSolver",
-    "slug": "circuitSolver",
+    "name": "screentest",
+    "slug": "screentest",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
