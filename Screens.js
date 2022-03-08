@@ -4,6 +4,14 @@ import { Text, View, Button, StyleSheet, Camera } from 'react-native';
 import GalleryComponent from './GalleryComponent';
 import CameraComponent from './CameraComponent';
 
+function ModelScreen({ navigation }){
+    return (
+        <View>
+            <Text>HI Douglas :D</Text>
+        </View>
+    )
+}
+
 function TestScreen({ navigation }) {
     return (
         <View style={styles.row}>
@@ -29,6 +37,7 @@ function HomeScreen({ navigation }) {
                 }}
             />
             <Button title="Go to test" onPress={() => { navigation.navigate('TestScreen') }} />
+            <Button title="Go to model page" onPress={() => {navigation.navigate('ModelScreen')}}/>
         </View>
     );
 }
@@ -57,4 +66,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export {HomeScreen, TestScreen, CameraScreen}
+export {HomeScreen, TestScreen, CameraScreen, ModelScreen}
