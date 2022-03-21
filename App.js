@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { Text, View, Button, StyleSheet, Camera } from 'react-native';
+import { Text, View, Button, StyleSheet, Camera, Image} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import * as tf from '@tensorflow/tfjs'
-import { bundleResourceIO } from '@tensorflow/tfjs-react-native';
+import { bundleResourceIO, decodeJpeg } from '@tensorflow/tfjs-react-native';
 
 import { TestScreen, HomeScreen, CameraScreen, ModelScreen } from './Screens.js'
 
@@ -14,6 +14,7 @@ class App extends React.Component {
   state = {
     isTfReady: false,
     model: false,
+    prediction: null
   }
 
   async componentDidMount() {
@@ -24,7 +25,18 @@ class App extends React.Component {
     const modelWeights = require("./assets/model/modelWeights.bin")
     const model = await tf.loadGraphModel(bundleResourceIO(modelJSON, modelWeights));
 
-    this.setState({ model })
+    //const testingImage = "./assets/img/R1.jpg"
+    //const imageAssetPath = Image.resolveAssetSource(testingImage)
+    const uri = 'http://www.clipartbest.com/cliparts/ace/og5/aceog5bni.jpeg'
+
+    const response = await fetch(uri, {}, { isBinary: true })
+    const imageData = await response.arrayBuffer()
+    const imageTensor = decodeJpeg(imageData)
+
+    const prediction = (await model.predict(imageTensor))[0]
+    console.log(prediction)
+
+    this.setState({ model, prediction })
   }
 
   render(){

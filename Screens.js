@@ -4,7 +4,7 @@ import { Text, View, Button, StyleSheet, Camera } from 'react-native';
 import GalleryComponent from './GalleryComponent';
 import CameraComponent from './CameraComponent';
 
-function ModelScreen({ navigation }){
+function ModelScreen({ navigation, image }){
     return (
         <View>
             <Text>HI Douglas :D</Text>
