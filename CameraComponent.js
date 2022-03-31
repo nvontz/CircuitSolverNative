@@ -2,7 +2,7 @@ import { Camera } from "expo-camera";
 import React, { useState, useEffect } from "react";
 import { StyleSheet, View, Text, Button, Image } from "react-native";
 
-function CameraComponent(GetImageUri) {
+function CameraComponent(props) {
   const [hasCameraPermission, setHasCameraPermission] = useState(null);
   const [camera, setCamera] = useState(null);
   const [image, setImage] = useState(null);
@@ -18,7 +18,7 @@ function CameraComponent(GetImageUri) {
     if (camera) {
       const data = await camera.takePictureAsync(null);
       setImage(data.uri);
-      GetImageUri(data.uri);
+      props.GetImageUri(data.uri);
       /* at this point, the image could be passed to the Image Recognition program */
     }
   };

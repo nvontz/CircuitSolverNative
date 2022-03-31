@@ -50,7 +50,7 @@ function App() {
     <SafeAreaView
       style={{ flex: 1, alignItems: "center", justifyContent: "center" }}
     >
-      <CameraComponent />
+      <CameraComponent GetImageUri={(image) => GetImage(image)} />
       <GalleryComponent GetImageUri={(image) => GetImage(image)} />
     </SafeAreaView>
   );
