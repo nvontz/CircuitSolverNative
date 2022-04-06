@@ -28,11 +28,8 @@ function GalleryComponent(props) {
         allowsEditing: false,
       });
 
-      console.log(result);
-
       if (!result.cancelled) {
         setImage(result.uri);
-        console.log(result.uri);
         props.GetImageUri(result.uri);
       }
     } catch (err) {
