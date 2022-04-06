@@ -7,6 +7,7 @@ import {
   Camera,
   Image,
   SafeAreaView,
+  Canvas,
 } from "react-native";
 import * as tf from "@tensorflow/tfjs";
 import { bundleResourceIO, decodeJpeg } from "@tensorflow/tfjs-react-native";
@@ -18,8 +19,7 @@ import react, { useState, useEffect } from "react";
 
 function App() {
   const [model, SetModel] = useState();
-  const [prediction, UpdatePrediction] = useState(null);
-  const [image, GetImage] = useState(null);
+  const [image, GetImage] = useState();
 
   //function that verifies the model has been loaded and that tf is ready
   async function loadModel() {
@@ -67,7 +67,8 @@ function App() {
 */
 
   async function predictionFunction() {
-    //Claer the canvas for each prediction
+    console.log("starting predicting");
+    //Clear the canvas for each prediction
     var cnvs = document.getElementById("myCanvas");
     var ctx = cnvs.getContext("2d");
     ctx.clearRect(
@@ -76,7 +77,7 @@ function App() {
       webcamRef.current.video.videoWidth,
       webcamRef.current.video.videoHeight
     );
-
+    console.log("predicting...");
     //Start Prediction
     const predicitions = await model.detect(document.getElementById(image));
 
@@ -122,17 +123,23 @@ function App() {
 
   return (
     <SafeAreaView
-      style={{ flex: 1, alignItems: "center", justifyContent: "center" }}
+      style={{
+        flex: 1,
+        alignItems: "center",
+        justifyContent: "center",
+      }}
     >
-      <CameraComponent GetImageUri={(image) => GetImage(image)} />
-      <GalleryComponent GetImageUri={(image) => GetImage(image)} />
       <Button
         title="Start Detection"
         onClick={() => {
           predictionFunction();
         }}
       />
+
+      <CameraComponent GetImageUri={(image) => GetImage(image)} />
     </SafeAreaView>
   );
 }
 export default App;
+
+/* <GalleryComponent GetImageUri={(image) => GetImage(image)} /> */
