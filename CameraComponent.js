@@ -31,7 +31,7 @@ export default function App(props) {
       const data = await camera.takePictureAsync(null);
       console.log(data.uri);
       setImage(data.uri);
-      props.GetImageUri(data.uri);
+      props.GetImageUri(data);
     }
   };
 
@@ -45,7 +45,7 @@ export default function App(props) {
     console.log(result);
     if (!result.cancelled) {
       setImage(result.uri);
-      props.GetImageUri(result.uri);
+      props.GetImageUri(result);
     }
   };
 

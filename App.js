@@ -15,6 +15,13 @@ import GalleryComponent from "./GalleryComponent";
 import CameraComponent from "./CameraComponent";
 import { image, model } from "@tensorflow/tfjs";
 import react, { useState, useEffect } from "react";
+
+import {
+  getModel,
+  convertBase64ToTensor,
+  startPrediction,
+} from "./helpers/tensor-helper";
+import { cropPicture } from "./helpers/image-helper";
 //import { CardText } from "reactstrap";
 
 function App() {
@@ -59,12 +66,17 @@ function App() {
     */
     console.log("predicting...");
     //Start Prediction
-    const predicitions = await model.predict(photo);
+    const croppedData = await cropPicture(photo, 300);
+    const tensor = await convertBase64ToTensor(croppedData.base64);
+    const predicitions = await startPrediction(model, tensor);
 
     console.log("tried to make prediction");
+
+    console.log(predicitions);
+    /*
     if (predicitions.length > 0) {
       console.log(predicitions);
-      /*
+      
       for (let n = 0; n < predicitions.length; n++) {
         console.log(n);
         if (predicitions[n].score > 0.5) {
@@ -97,8 +109,8 @@ function App() {
 
           console.log("detected");
         }
-      } */
-    }
+      } 
+    } */
     setTimeout(() => predictionFunction(), 500);
   };
 

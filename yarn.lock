@@ -1221,10 +1221,10 @@
     "@nodelib/fs.scandir" "2.1.5"
     "fastq" "^1.6.0"
 
-"@react-native-async-storage/async-storage@^1.13.0":
-  "integrity" "sha512-aQ7ka+Ii1e/q+7AVFIZPt4kDeSH8b784wMDtz19Kf4A7hf+OgCHBlUQpOXsrv8XxhlBxu0hv4tfrDO15ChnV0Q=="
-  "resolved" "https://registry.npmjs.org/@react-native-async-storage/async-storage/-/async-storage-1.16.1.tgz"
-  "version" "1.16.1"
+"@react-native-async-storage/async-storage@^1.13.0", "@react-native-async-storage/async-storage@^1.17.3":
+  "integrity" "sha512-2dxdlGwBjBP2qYu6F72U7cRRFshISYiNEWCaQNOJtxUERCMaYRWcniYqhL248KSbGUMpRhFCEtliztsiGoYYMA=="
+  "resolved" "https://registry.npmjs.org/@react-native-async-storage/async-storage/-/async-storage-1.17.3.tgz"
+  "version" "1.17.3"
   dependencies:
     "merge-options" "^3.0.4"
 
@@ -2722,18 +2722,30 @@
   dependencies:
     "fontfaceobserver" "^2.1.0"
 
-"expo-gl-cpp@~7.0.0":
-  "integrity" "sha512-GACZgbBp6C5mTSH58qImJIBhPztfSwqHzfpFeBWszqivG0yPXXaKpZO+t9A5iyPR661/u1Dw6WPJw9SDZ7T4Tw=="
-  "resolved" "https://registry.npmjs.org/expo-gl-cpp/-/expo-gl-cpp-7.0.0.tgz"
-  "version" "7.0.0"
+"expo-gl-cpp@~11.1.0":
+  "integrity" "sha512-BWcJ3cZAo0ZlKueKwb3uRYrRjZPF/CfgE96hBCnLhYBs2TOWt/iV8s5+H0fvZuHBKo13AK/9NdyVRaAb88DKqg=="
+  "resolved" "https://registry.npmjs.org/expo-gl-cpp/-/expo-gl-cpp-11.1.1.tgz"
+  "version" "11.1.1"
 
-"expo-gl@^7.0.0":
-  "integrity" "sha512-UKBF0c+3SuktX754MbEJ6absuvtb0Q6PvO2UkIUuvrOxsTDbH6396+fBNtb5hme69DEfUlR+BVkLfUmYmHs5ew=="
-  "resolved" "https://registry.npmjs.org/expo-gl/-/expo-gl-7.0.0.tgz"
-  "version" "7.0.0"
+"expo-gl@^7.0.0", "expo-gl@~11.1.1":
+  "integrity" "sha512-sNdJObyPUimpWlna4ttdwR9rRHvMn03kqzqc6BVYOWidaPA/T3VsXuuYkPNKc8ps//17U1jvMSl/8FmE0jqRzA=="
+  "resolved" "https://registry.npmjs.org/expo-gl/-/expo-gl-11.1.2.tgz"
+  "version" "11.1.2"
   dependencies:
-    "expo-gl-cpp" "~7.0.0"
-    "prop-types" "^15.6.2"
+    "expo-gl-cpp" "~11.1.0"
+    "invariant" "^2.2.4"
+
+"expo-image-loader@~3.1.0":
+  "integrity" "sha512-ZX4Bh3K4CCX1aZflnmbOgFNLS+c0/GUys4wdvqxO+4A4KU1NNb3jE7RVa/OFYNPDcGhEw20c1QjyE/WsVURJpg=="
+  "resolved" "https://registry.npmjs.org/expo-image-loader/-/expo-image-loader-3.1.1.tgz"
+  "version" "3.1.1"
+
+"expo-image-manipulator@~10.2.0":
+  "integrity" "sha512-0klgPMn8fIUkbWpRVT0LVCtq0ozzm3gO60jZEcJPofJRQWDKuv3Rcf0+8pTqpn45J53eAGsuZ72/Yj0AJqaedQ=="
+  "resolved" "https://registry.npmjs.org/expo-image-manipulator/-/expo-image-manipulator-10.2.1.tgz"
+  "version" "10.2.1"
+  dependencies:
+    "expo-image-loader" "~3.1.0"
 
 "expo-image-picker@~12.0.1":
   "integrity" "sha512-rAoNGtofV5cg3UN+cdIGDVfbMvbutBX6uNV7jCIEw/WZxZlbW+R7HC8l5lGDFtoLVqcpkHE/6JpAXvESxVSAOA=="
@@ -4811,7 +4823,7 @@
     "normalize-css-color" "^1.0.2"
     "prop-types" "^15.6.0"
 
-"react-native@*", "react-native@^0.0.0-0 || 0.60 - 0.67 || 1000.0.0", "react-native@>= 0.58.0", "react-native@>=0.64.0-rc.0 || 0.0.0-*", "react-native@0.64.3":
+"react-native@*", "react-native@^0.0.0-0 || 0.60 - 0.68 || 1000.0.0", "react-native@>= 0.58.0", "react-native@>=0.64.0-rc.0 || 0.0.0-*", "react-native@0.64.3":
   "integrity" "sha512-2OEU74U0Ek1/WeBzPbg6XDsCfjF/9fhrNX/5TFgEiBKd5mNc9LOZ/OlMmkb7iues/ZZ/oc51SbEfLRQdcW0fVw=="
   "resolved" "https://registry.npmjs.org/react-native/-/react-native-0.64.3.tgz"
   "version" "0.64.3"
