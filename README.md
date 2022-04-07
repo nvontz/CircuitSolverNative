@@ -4,7 +4,7 @@ Dependency issue with TFLite
 
 Need to move picture to a take photo class and have it open when user clicks a button. Picture is then moved into a variable that we sent through ML after user confirmation.
 
-Need to add gallery functionality to make iamges selectable from camera roll.
+Need to add gallery functionality to make images selectable from camera roll.
 
 Need to build out a better UI with how a user would interact. 
 
