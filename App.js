@@ -111,7 +111,7 @@ function App() {
         }
       } 
     } */
-    setTimeout(() => predictionFunction(), 500);
+    //setTimeout(() => predictionFunction(), 500);
   };
 
   const checkUri = async () => {
