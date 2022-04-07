@@ -19,7 +19,7 @@ import react, { useState, useEffect } from "react";
 
 function App() {
   const [model, SetModel] = useState();
-  const [image, GetImage] = useState();
+  const [photo, GetImage] = useState();
 
   //function that verifies the model has been loaded and that tf is ready
   async function loadModel() {
@@ -43,32 +43,10 @@ function App() {
     });
   }, []);
 
-  //old useEffect()
-  /*
-  useEffect(() => {
-    (async () => {
-
-      const testingImage = "./assets/img/R1.jpg";
-      const imageAssetPath = Image.resolveAssetSource(testingImage);
-      const uri = "http://www.clipartbest.com/cliparts/ace/og5/aceog5bni.jpeg";
-
-      const response = await fetch(uri, {}, { isBinary: true });
-      const imageData = await response.arrayBuffer();
-      const imageTensor = decodeJpeg(imageData);
-
-      UpdatePrediction(await model.predict(imageTensor))[0];
-      //console.log(prediction);
-
-      this.setState({ model, prediction });
-
-      //console.log(model);
-    })();
-  }, []);
-*/
-
-  async function predictionFunction() {
+  const predictionFunction = async () => {
     console.log("starting predicting");
     //Clear the canvas for each prediction
+    /*
     var cnvs = document.getElementById("myCanvas");
     var ctx = cnvs.getContext("2d");
     ctx.clearRect(
@@ -77,13 +55,15 @@ function App() {
       webcamRef.current.video.videoWidth,
       webcamRef.current.video.videoHeight
     );
+
+    */
     console.log("predicting...");
     //Start Prediction
     const predicitions = await model.detect(document.getElementById(image));
 
     if (predicitions.length > 0) {
       console.log(predicitions);
-
+      /*
       for (let n = 0; n < predicitions.length; n++) {
         console.log(n);
         if (predicitions[n].score > 0.5) {
@@ -116,10 +96,14 @@ function App() {
 
           console.log("detected");
         }
-      }
+      } */
     }
     setTimeout(() => predictionFunction(), 500);
-  }
+  };
+
+  const checkUri = async () => {
+    console.log(photo);
+  };
 
   return (
     <SafeAreaView
@@ -131,15 +115,18 @@ function App() {
     >
       <Button
         title="Start Detection"
-        onClick={() => {
+        onPress={() => {
           predictionFunction();
         }}
       />
-
-      <CameraComponent GetImageUri={(image) => GetImage(image)} />
+      <Button
+        title="Check Image Uri"
+        onPress={() => {
+          checkUri();
+        }}
+      />
+      <CameraComponent GetImageUri={(photo) => GetImage(photo)} />
     </SafeAreaView>
   );
 }
 export default App;
-
-/* <GalleryComponent GetImageUri={(image) => GetImage(image)} /> */
