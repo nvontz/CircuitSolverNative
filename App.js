@@ -59,8 +59,9 @@ function App() {
     */
     console.log("predicting...");
     //Start Prediction
-    const predicitions = await model.detect(document.getElementById(image));
+    const predicitions = await model.predict(photo);
 
+    console.log("tried to make prediction");
     if (predicitions.length > 0) {
       console.log(predicitions);
       /*
