@@ -10,26 +10,35 @@
     "eject": "expo eject"
   },
   "dependencies": {
+    "@google-cloud/automl": "^2.5.2",
     "@react-native-async-storage/async-storage": "^1.17.3",
     "@react-navigation/native-stack": "^6.5.0",
-    "@tensorflow/tfjs": "^3.14.0",
+    "@tensorflow/tfjs": "^3.15.0",
     "@tensorflow/tfjs-react-native": "^0.8.0",
     "@unimodules/core": "~7.2.0",
+    "depcheck": "^1.4.3",
+    "events": "^3.3.0",
     "expo": "~44.0.0",
     "expo-camera": "~12.1.2",
     "expo-gl": "~11.1.1",
     "expo-image-manipulator": "~10.2.0",
     "expo-image-picker": "~12.0.1",
     "expo-status-bar": "~1.2.0",
+    "querystring": "^0.2.1",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-native": "0.64.3",
     "react-native-safe-area-context": "3.3.2",
     "react-native-screens": "~3.10.1",
-    "react-native-web": "0.17.1"
+    "react-native-web": "0.17.1",
+    "stream": "^0.0.2",
+    "util": "^0.12.4"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9"
   },
-  "private": true
+  "private": true,
+  "browser": {
+    "child_process": false
+  }
 }

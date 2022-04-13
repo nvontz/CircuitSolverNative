@@ -26,10 +26,11 @@ export const getModel = async () => {
 
 export const convertBase64ToTensor = async (base64) => {
   try {
-    const uIntArray = Base64Binary.decode(base64);
+    const uIntArray = Base64Binary.decode(base64, Float32Array);
     // decode a JPEG-encoded image to a 3D Tensor of dtype
     const decodedImage = decodeJpeg(uIntArray, 3);
     // reshape Tensor into a 4D array
+
     return decodedImage.reshape([
       1,
       BITMAP_DIMENSION,

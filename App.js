@@ -62,17 +62,38 @@ function App() {
       webcamRef.current.video.videoWidth,
       webcamRef.current.video.videoHeight
     );
-
+    
+    
     */
-    console.log("predicting...");
+    const url =
+      "https://automl.googleapis.com/v1beta1/projects/732021340214/locations/us-central1/models/IOD1837923845781061632:predict?key=AIzaSyAZaSJijgrI2aJwERA5BaoiwCCQuWu_6BY";
+
+    const options = {
+      method: "post",
+      Authorization: {
+        Bearer:
+          "ya29.A0ARrdaM9y0BMq6wt9yYyAu6ETQ6yQ_BuPj53Awf1q50hZzgJkDfMCjsOIBiY2qLJq30iIxw81AVeqgcH7H6tLQxWp6oy1N34RO6ce4KjAFzoazjLhGGGNuQmtK203VMb06ahYwVfauJ2GUvbAsRI_HY1mugnNFC8",
+      },
+      payload: {
+        image: {
+          imageBytes: photo.base64,
+        },
+      },
+    };
+
+    fetch(url, options)
+      .then((res) => res.text())
+      .then((data) => console.log(data));
     //Start Prediction
-    const croppedData = await cropPicture(photo, 300);
-    const tensor = await convertBase64ToTensor(croppedData.base64);
-    const predicitions = await startPrediction(model, tensor);
 
-    console.log("tried to make prediction");
+    //const croppedData = await cropPicture(photo, 300);
+    //const tensor = await convertBase64ToTensor(croppedData.base64);
 
-    console.log(predicitions);
+    //const predicitions = await startPrediction(model, tensor);
+
+    //console.log("tried to make prediction");
+
+    // console.log(predicitions);
     /*
     if (predicitions.length > 0) {
       console.log(predicitions);
